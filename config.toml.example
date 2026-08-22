@@ -1,0 +1,41 @@
+# Copy this file to config.toml and adjust values.
+# config.toml is gitignored so credentials are not committed.
+
+# Every environment can be configured with database parts instead of a full URL.
+# driver defaults to "postgres"; use "sqlite" for project-local SQLite,
+# or "mysql" / "mariadb" for MySQL/MariaDB.
+
+[development.database]
+driver = "sqlite"
+database = ".dev.sqlite"
+
+[testing.database]
+# In-memory SQLite: fast, isolated, and discarded after the process exits.
+driver = "sqlite"
+database = ":memory:"
+
+# Or use a project-local file:
+# driver = "sqlite"
+# database = ".test.sqlite"
+
+[production.database]
+driver = "postgres"
+host = "localhost"
+user = "perfect_form"
+password = "secret"
+database = "perfect_form"
+# port = 5432
+
+# MySQL production example:
+# [production.database]
+# driver = "mysql"
+# host = "localhost"
+# user = "perfect_form"
+# password = "secret"
+# database = "perfect_form"
+# port = 3306
+
+# JWT secret used to sign access and refresh tokens.
+# In production this MUST be set via PERFECT_FORM_JWT_SECRET or [production.jwt].
+# [production.jwt]
+# secret = "a-long-random-secret-at-least-32-bytes"
