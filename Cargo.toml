@@ -1,0 +1,22 @@
+[package]
+name = "perfect-form"
+version = "0.1.0"
+edition = "2024"
+default-run = "perfect-form"
+
+[workspace]
+members = [".", "macros"]
+
+[dependencies]
+anyhow = "1"
+argon2 = "0.5"
+clap = { version = "4.6", features = ["derive"] }
+jsonwebtoken = "9"
+rpassword = "7"
+toasty = { version = "0.11", features = ["sqlite", "migration"] }
+toasty-cli = "0.11"
+serde = { version = "1", features = ["derive"] }
+tokio = { version = "1.53.1", features = ["rt-multi-thread", "macros"] }
+toml = "0.8"
+perfect-form-macros = { path = "macros" }
+topcoat = { version = "0.9.0", features = ["htmx"] }
